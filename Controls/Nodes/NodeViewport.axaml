@@ -1,0 +1,14 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cnodes="clr-namespace:Teno.Controls.Nodes">
+        <Style Selector="cnodes|NodeViewport">
+                <Setter Property="Template">
+                        <ControlTemplate TargetType="cnodes:NodeViewport">
+                                <Grid>
+                                        <Canvas Background="Black"
+                                                Name="PART_MainCanvas"/>
+                                </Grid>
+                        </ControlTemplate>
+                </Setter>
+        </Style>
+</Styles>

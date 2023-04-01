@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cnodes="clr-namespace:Teno.Controls.Nodes"
+        xmlns:viewModels="clr-namespace:Teno.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Teno.Views.MainWindow"
+        x:DataType="viewModels:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="DesktopApp">
+
+    <Design.DataContext>
+        <viewModels:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="* Auto">
+        <cnodes:NodeViewport Grid.Row="0" 
+                             Name="NodeViewport"
+                             Figures="{Binding Figures}"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock Text="X:"/>
+            <TextBlock Width="50" Text="{Binding #NodeViewport.PointerX}"/>
+            <TextBlock Text="Y:"/>
+            <TextBlock Width="50" Text="{Binding #NodeViewport.PointerY}"/>
+        </StackPanel>
+    </Grid>
+
+</Window>
